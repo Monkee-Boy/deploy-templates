@@ -56,9 +56,9 @@ Capistrano consists of at least three files. For the most part if you are using 
 
 * **:application** is the project name with no spaces or special characters.
 * **:project_name** is the pretty project name that can have spaces; this is used for HipChat notifications.
-* **:repo_url** should be the complete git url, typical from beanstalk.
+* **:repo_url** should be the complete git url, typically from beanstalk.
 * **:linked_files** should contain any files that are not in the repo but are still needed. This is typical config files like wp-config.php. Capistrano will create a symlink to these files inside `./shared`. These files must already exist inside shared or the deployment will fail.
-* **:linked_dirs** should contain any directories that are not in the repo but are still needed. This typicaly includes uploads, node_modules, bower_components, etc.
+* **:linked_dirs** should contain any directories that are not in the repo but are still needed. This Typically includes uploads, node_modules, bower_components, etc.
 
 > In `:deploy` you will find the build task. This task should be customized based on the project needs. Typically you would invoke `build:npm` and `build:bower` here. You could also do `jekyll build` or anything else needed for your build process.
 >
@@ -72,3 +72,7 @@ Capistrano consists of at least three files. For the most part if you are using 
 
 * **:deploy_to** should be the server path where the deployment should take place. For production this would typically be `/var/www/projectdomain.com/_`. For dev this might be `/var/www/projectdomain.com/dev`.
 * **:deploy_env** is the name of that environment. Typically will be production, dev, staging, etc.
+
+## The Process
+
+> What happens
