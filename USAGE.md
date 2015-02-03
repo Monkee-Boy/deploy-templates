@@ -8,7 +8,6 @@ We use Capistrano to handle our deployments to the Habitat. At it's bare Capistr
 
 ![RVM](https://img.shields.io/badge/Install-RVM-acca41.svg?style=flat-square)
 * `curl -sSL https://get.rvm.io | bash -s stable --ruby`
-* `rvm install 2.2.0`
 * `rvm reload`
 
 ![Capistrano](https://img.shields.io/badge/Install-Capistrano-acca41.svg?style=flat-square)
@@ -60,6 +59,7 @@ Capistrano consists of at least three files. For the most part if you are using 
 * **:repo_url** should be the complete git url, typical from beanstalk.
 * **:linked_files** should contain any files that are not in the repo but are still needed. This is typical config files like wp-config.php. Capistrano will create a symlink to these files inside `./shared`. These files must already exist inside shared or the deployment will fail.
 * **:linked_dirs** should contain any directories that are not in the repo but are still needed. This typicaly includes uploads, node_modules, bower_components, etc.
+
 > In `:deploy` you will find the build task. This task should be customized based on the project needs. Typically you would invoke `build:npm` and `build:bower` here. You could also do `jekyll build` or anything else needed for your build process.
 >
 > At the bottom you will find `:build` which has some basic build tasks including `npm install` and `bower install` to update modules and components as needed. You can also add any other build tasks as needed.
