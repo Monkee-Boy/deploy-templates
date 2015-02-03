@@ -31,7 +31,7 @@ We use Capistrano to handle our deployments to the Habitat. At it's bare Capistr
 
 ## The Deploy
 
-> See the details below for a complete run down of what needs to be changed before doing a deployment.
+> See the details below for a complete run down of what needs to be changed before doing a deployment. Remember that the deployment uses the git repo so make sure you commit and push before deploying.
 
 * `cap production deploy`
   * to deploy to the production environment.
@@ -39,6 +39,8 @@ We use Capistrano to handle our deployments to the Habitat. At it's bare Capistr
   * to deploy to the dev environment.
 * `cap production build:bower`
   * to run a custom Capistrano task, in this case run bower in the production environment.
+* `cap production deploy:rollback`
+  * to rollback one release from current.
 
 ## The Details
 
@@ -75,4 +77,22 @@ Capistrano consists of at least three files. For the most part if you are using 
 
 ## The Process
 
-> What happens
+> So, what exactly happens when you run `cap production deploy`? First lets take a look at the directory structure on the server.
+
+```
+./current
+./public_html
+./releases
+    /RELEASEID
+./repo
+./shared
+```
+
+> `./current` is a symlink to the latest release inside `./releases`. `./public_html` is a symlink to `./current` but this is not created by Capistrano and instead you will create it. `./releases` contains each stored release of the project. By default we store five releases at a time. This is where the project files actually live. `./repo` contains the bare bones git repo. `./shared` is where the linked files and directories live. Capistrano will create these directories and then it never touches them again.
+>
+> Back to the deployment. Capistrano will first SSH into the server and cd `:deploy_to`. It then sets the shared assets; as in the linked files and directories. Then it creates a new release from the git repo in `./releases`. It then creates the symlinks from inside releases to the linked files and directories in `./shared`. Next it will run any of our build tasks such as `npm install`, `bower install`, or `jekyll build`. Then it will publish the new release by creating a symlink from `./current` to this new release inside `./releases`. Then it will finish by cleaning up any tmp directories and logging the revision to a log file.
+>
+> When you do `cap production deploy:rollback` it follows much of this same flow with the exception of setting the current symlink to a previous release instead of the newest one.
+
+
+To dive more into Capistrano don't forget the official documentation at [capistranorb.com](http://capistranorb.com/).
