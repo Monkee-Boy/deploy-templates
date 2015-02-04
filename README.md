@@ -9,7 +9,7 @@ First you will need any required Ruby gems. Below are the base requirements but 
 
 * `gem install capistrano`
 * `gem install hipchat`
-* `gem install mboy --source PRIVATESOURCE`
+* `gem install mboy-deploy --source PRIVATESOURCE`
 
 Next copy your choice of templates to the root of your project. Remember that these files SHOULD be added to the git repo. Tweak the deploy config as needed.
 

@@ -15,7 +15,7 @@ We use Capistrano to handle our deployments to the Habitat. At it's bare Capistr
 
 ![Gems](https://img.shields.io/badge/Install-Gems-acca41.svg?style=flat-square)
 * `gem install hipchat`
-* `gem install mboy --source PRIVATESOURCE`
+* `gem install mboy-deploy --source PRIVATESOURCE`
 
 ## The Config
 
