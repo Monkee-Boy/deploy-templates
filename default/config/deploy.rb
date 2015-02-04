@@ -30,6 +30,9 @@ namespace :deploy do
   desc 'mBoy Deployment Initialized.'
   Mboy.deploy_starting_message
 
+  desc 'Tag this release in git.'
+  Mboy.tag_release
+
   desc 'mBoy Deployment Steps'
   Mboy.deploy_steps
 

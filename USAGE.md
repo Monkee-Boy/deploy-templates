@@ -72,6 +72,7 @@ There are only a few things that should be tweaked in these environment files.
 
 * **:deploy_to** should be the server path where the deployment should take place. For production this would typically be `/var/www/projectdomain.com/_`. For dev this might be `/var/www/projectdomain.com/dev`.
 * **:deploy_env** is the name of that environment. Typically will be production, dev, staging, etc.
+* **:branch** is the name of the branch that should be deployed. Default is `master` so this only needs to be set in other environments besides production; see `./config/deploy/dev.rb` for example.
 
 ## The Process
 

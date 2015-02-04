@@ -17,3 +17,4 @@ server 'habitat.monkee-boy.com', user: 'deploy', roles: %w{web}
 
 set :deploy_to, '/var/www/PROJECTDOMAIN.com/dev'
 set :deploy_env, 'dev'
+set :branch, 'dev'
