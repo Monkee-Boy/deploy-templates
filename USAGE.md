@@ -81,7 +81,7 @@ So, what exactly happens when you run `cap production deploy`? First lets take a
 ./current
 ./public_html
 ./releases
-    /RELEASEID
+    /RELEASETIMESTAMP
 ./repo
 ./shared
 ```
