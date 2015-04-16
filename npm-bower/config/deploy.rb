@@ -10,10 +10,10 @@ set :repo_url, 'PROJECTGITURL' # the git repo url
 set :current_dir, 'public_html' # almost always public_html
 
 # Default value for :linked_files is []
-# set :linked_files, fetch(:linked_files, []).push('') # Note that this file must exist on the server already, Capistrano will not create it.
+#set :linked_files, %w{} # Note that this file must exist on the server already, Capistrano will not create it.
 
 # Default value for linked_dirs is []
-set :linked_dirs, fetch(:linked_dirs, []).push('node_modules', 'bower_components')
+set :linked_dirs, %w{node_modules bower_components} # Note that Capistrano will create these directories if needed.
 
 namespace :deploy do
   STDOUT.sync
