@@ -11,6 +11,8 @@ First you will need any required Ruby gems. Below are the base requirements but 
 * `gem install hipchat`
 * `gem install mboy-deploy --source PRIVATESOURCE`
 
+> We highly recommend you use the [yeoman generator](https://www.npmjs.com/package/generator-mboy-deploy) to generate your deploy config files instead of manually pulling from this repo.
+
 Next copy your choice of templates to the root of your project. Remember that these files SHOULD be added to the git repo. Tweak the deploy config as needed.
 
 Finally run `cap production deploy` or whatever environment you are deploying to.
