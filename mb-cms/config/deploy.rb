@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock '3.3.5'
+lock '<4.0.0'
 
 # Load up the mBoy gem
 Mboy.new() # Setting initial defaults.
@@ -171,17 +171,17 @@ namespace :build do
       end
     end
   end
-      
+
   before :migrations, :deploy_step_beforemigrations do
     on roles(:all) do
       print 'Running database migrations......'
     end
   end
-  
+
   after :migrations, :deploy_step_aftermigrations do
     on roles(:all) do
       puts '✔'.green
     end
   end
-  
+
 end

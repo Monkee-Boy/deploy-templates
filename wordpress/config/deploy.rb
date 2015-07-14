@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock '3.3.5'
+lock '<4.0.0'
 
 # Load up the mBoy gem
 Mboy.new() # Setting initial defaults.
