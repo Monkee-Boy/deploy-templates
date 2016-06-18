@@ -1,6 +1,8 @@
 ![Monkee-Boy](https://dujrsrsgsd3nh.cloudfront.net/img/emoticons/113009/mboy-1403710932.jpg) Deploy Templates
 ==============
 
+**These are no longer supported. Use the [yeoman generator](https://www.npmjs.com/package/generator-mboy-deploy) to generate your deployment config files instead.**
+
 Here you will find some templates for typical Monkee-Boy deployments using Capistrano. These are just templates and should be customized as needed per project.
 
 ## Usage
